@@ -133,5 +133,20 @@ public class Hotel implements Serializable {
         }
         return disponible;
     }
+
+    public Cliente buscarClienteporDNI(int DNI){
+        for (int i = 0; i < 8;) {
+            for (int j = 0; j < 6;) {
+                if (DNI == hotel[i][j].getDNI()){
+                    Cliente cl = new Cliente(hotel[i][j].getNombre(),hotel[i][j].getApellidos(),hotel[i][j].getDNI(),hotel[i][j].getNumTelef(),hotel[i][j].getNumTarjet(),hotel[i][j].getFechaEntrada(),hotel[i][j].getFechaSalida(),hotel[i][j].getRegAlimenticio());
+                    return cl;
+                }else{
+                    i++;
+                    j++;
+                }
+            }
+        }
+        return null;
+    }
 }
 
